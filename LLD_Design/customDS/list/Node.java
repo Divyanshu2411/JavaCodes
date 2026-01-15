@@ -1,10 +1,10 @@
 package customDS.list;
 
 public class Node<K,V>{
-    public K key;
+    public final K key; // because we never want to change key value
     public V val;
-    public Node<K,V> next;
-    public Node<K,V> prev;
+    public volatile Node<K,V> next;
+    public volatile Node<K,V> prev;
 
     public Node(K key, V val){
         this.key = key;
