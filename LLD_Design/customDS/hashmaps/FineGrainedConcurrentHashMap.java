@@ -66,6 +66,8 @@ public class FineGrainedConcurrentHashMap<K,V> {
         int nContainerSize= 2 * atomicMap.getContainerSize().get();
         ArrayList<CusDLL<K,V>> nMap= new ArrayList<CusDLL<K, V>>();
         //TODO: even though rehash is thread locked, put and remove are not. It is possible that you might accidentally end up resurrecting a removed node. Ensure that you block the bucket you are working on.
+        // Even that is not entirely safe as it is possible that while the new map is building, put or remove has modified already changed bucket
+        // to avoid that we need to ens
         for(int i=0; i<nContainerSize; i++){
             nMap.add(new CusDLL<K,V>());
         }
