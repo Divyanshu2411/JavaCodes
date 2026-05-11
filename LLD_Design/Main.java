@@ -1,9 +1,13 @@
+import LLD_Application.Elevator.ElevatorTest;
+import LLD_Application.RateLimiter.RateLimiterClient;
 import customDS.hashmaps.CusHashMap;
 import customDS.list.CusDLL;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         // 1. Initialize the List with String Keys and Integer Values
+        ElevatorTest.simulation();
+        RateLimiterClient.rateLimiterTokenBucketClientRunner();
         CusDLL<String, Integer> list = new CusDLL<>();
 
         System.out.println("--- Testing Add ---");
