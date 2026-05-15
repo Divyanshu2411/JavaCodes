@@ -70,3 +70,15 @@
 + getFloor()
 + getDirection()
 ```
+
+
+## Learning
+ - SCAN strategy -> always look ahead if us direction me kuch hai ki nahi and then move
+ - the tick/step simulation (it gets run by a thread in the bg) while user input are kept separately, look at ElevatorTest
+ - Both best elevator selection and elevator movement itself can be strategy
+ - Don't overcomplicate with patterns as of now
+ - Requirements dekho, find noun for classes, and verb for functions, create candidates at first, don't commit
+ - See if the noun has any state or just a variable of sort
+ - any simulation related, step is really good to move time ahead, probably can be used in all game/parking/elevator
+ - treat ENUMS like state, if a field is of some type ENUM, all ENUM states should be valid
+   - that's why we had to keep elevator state and request state enum separte as request can't be idle or stop
